@@ -1,18 +1,23 @@
 # CamAlert
+
 Originally created for VBPS
 
-# Purpose
-Check list of cameras to confirm whether they are online, then send an email with the IP of unreachable cameras
+## Purpose
+CamAlert checks a list of cameras to confirm whether they are online. If any cameras are unreachable, it sends an email with the IP addresses of those cameras.
 
-# How to Use
-First Setup:
-Open CamAlert.py with a text editor of your choice (Notepad++ recommended)
-Update Line 35 to include the email you would like to use as the mail sender (Note: Must use gmail services)
-Update Line 36 to include the password for the chosen email
-Update line 37 to include the recipients of the script's emails
+## How to Use
 
-After Setup:
-Make sure you have the latest version of python installed on your machine, then run the script
+### Initial Setup:
+1. Open `CamAlert.py` with a text editor of your choice (Notepad++ is recommended).
+2. Update **Line 35** to specify the email address you would like to use as the sender.  
+   **Note:** This must be a Gmail account.
+3. Update **Line 36** with the password for the chosen email account.
+4. Update **Line 37** with the recipients' email addresses to receive the alerts.
 
-Tip: Use an application/script scheduler and have the script run once a night. Windows has a
-built in feature for this you can research.
+### After Setup:
+1. Ensure that you have the latest version of Python installed on your machine.
+2. Run the script.
+
+### Tip:
+Consider using a task scheduler to run the script automatically once a night. Windows has a built-in feature for this, which you can research.
+
