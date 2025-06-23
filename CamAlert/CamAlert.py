@@ -8,7 +8,7 @@ cam_count = 0
 cam_check_count = 0
 
 
-
+# Import Camera IPs from text file
 def import_camlist(ip_list, cam_count):
     data_file = open("camlist.txt", "r")
     for eachline in data_file:
@@ -18,6 +18,7 @@ def import_camlist(ip_list, cam_count):
         cam_count += 1
     data_file.close()
 
+# Verify if Cameras Are Online
 def check_camlist(cam_check_count, cam_count, bad_cameras, ip_list):
     while cam_check_count != cam_count:
         response = os.system("ping -n 1 -w 1000 " + ip_list[cam_check_count])
@@ -28,6 +29,7 @@ def check_camlist(cam_check_count, cam_count, bad_cameras, ip_list):
             bad_cameras.append(ip_list[cam_check_count])
         cam_check_count += 1
 
+# Send Email Containing Unreachable Cameras
 def send_email(bad_cameras):
     unformatted_today = date.today()
     today = unformatted_today.strftime("%m/%d/%y")
@@ -44,8 +46,8 @@ def send_email(bad_cameras):
         server.login(scriptmail, password)
         server.sendmail(scriptmail, recipients, message)
 
-
-def cam_alert(): #Host function that calls all other functions
+# Main Controller Function
+def cam_alert():
     import_camlist(ip_list, cam_count)
     print("Cameras Imported: " + str(cam_count))
     check_camlist(cam_check_count, cam_count, bad_cameras, ip_list)
