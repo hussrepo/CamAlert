@@ -5,6 +5,9 @@ Originally created for VBPS
 ## Purpose
 CamAlert checks a list of cameras to confirm whether they are online. If any cameras are unreachable, it sends an email with the IP addresses of those cameras.
 
+## Technology Stack:
+Python, SMTP
+
 ## How to Use
 
 ### Initial Setup:
